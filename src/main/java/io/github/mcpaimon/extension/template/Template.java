@@ -15,6 +15,9 @@ public class Template implements IMCExtension {
     public void onLoad(JavaPlugin plugin, Executor executor) {
         if (plugin instanceof MCAIPlugin mcaiPlugin) {
             
+            // Create the custom category
+            mcaiPlugin.getManager().createCategory("custom", "This is custom catagory");
+            
             // Register your custom tools here
             mcaiPlugin.getManager().registerTool(new GetPlayerName());
             mcaiPlugin.getManager().registerTool(new GetPlayerUuid());
