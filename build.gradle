@@ -36,5 +36,20 @@ java {
 }
 
 base {
-    archivesName = "TemplateTools"
+    archivesName = project.property('project-name')
+}
+
+processResources {
+    def props = [
+        "name": project.property("project-name"),
+        "version": "${project.property('project-version')}-${project.property('project-iteration')}",
+        "main": project.property('project-group')
+    ]
+    
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    
+    filesMatching("extension.yml") {
+        expand props
+    }
 }

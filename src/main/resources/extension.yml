@@ -1,6 +1,6 @@
-name: "MyExtension"
-main: "io.github.mcpaimon.extension.template.Template"
-version: "1.0.0"
+name: ${name}
+main: ${main}.extension.template.Template
+version: ${version}
 
 git:
   provider: github
