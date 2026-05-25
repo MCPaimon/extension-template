@@ -27,7 +27,7 @@ public class GetPlayerUuid implements AITool {
 
     @Override
     public List<String> getCategories() {
-        return List.of("custom");
+        return List.of("player", "custom");
     }
 
     @Override
