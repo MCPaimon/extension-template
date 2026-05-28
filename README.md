@@ -1,29 +1,38 @@
 # MCPaimon Template Extension
 
-This module serves as a boilerplate and starting point for developers who want to create their own custom extensions and tools for the MCPaimon AI Plugin.
+This project serves as a boilerplate for developers creating custom extensions and tools for the MCPaimon AI Plugin. It uses a multi-module Gradle setup to support different platforms (starting with PaperMC).
+
+## Project Structure
+
+* **`papermc/`**: Contains the PaperMC-specific implementation and tools.
+* **`src/main/resources/`**: Contains the global `extension.yml` configuration.
 
 ## Features & AI Tools
 
-This template includes basic examples of how to register custom tools to the MCPaimon manager:
+This template includes basic examples of how to register custom tools:
 
-* **`get_player_name`**: A simple tool that returns the name of the player interacting with the AI.
-* **`get_player_uuid`**: A simple tool that returns the UUID of the player interacting with the AI.
+* **`get_player_name`**: Returns the name of the player interacting with the AI.
+* **`get_player_uuid`**: Returns the UUID of the player interacting with the AI.
 
 ## How to Use
+
 1. Copy this template directory to start your new extension project.
-2. Update the `settings.gradle` and `gradle.properties` files with your project's name and group ID.
-3. Rename the main class and update the `src/main/resources/extension.yml` accordingly.
-4. Implement your custom tools by implementing the `AITool` interface and register them in your main extension class using `mcaiPlugin.getManager().registerTool(new YourCustomTool())`.
+2. Update `gradle.properties` with your project's name, group, and version.
+3. If adding new platforms, create a new submodule and update `settings.gradle` and the root `build.gradle`.
+4. Update `src/main/resources/extension.yml` to point to your main classes for each platform.
+5. Implement your custom tools in the respective modules and register them in your main extension class.
 
 ## Requirements
+
 * Java 25
-* PaperMC 1.21+ (Paper API 26.1.2)
 * MCPaimon AI Plugin Core
 
 ## Build Instructions
-To build the extension, use the included Gradle wrapper:
+
+To build the extension and create a merged JAR containing all platform implementations:
+
 ```bash
 ./gradlew build
 ```
 
-The compiled artifact will be located in `build/libs/`.
+The compiled artifact (Shadow JAR) will be located in `build/libs/`.

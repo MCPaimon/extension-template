@@ -1,8 +1,11 @@
 name: ${name}
-main: ${main}.extension.template.Template
 version: ${version}
+
+mains:
+  papermc: "${main}.extension.template.Template"
 
 git:
   provider: github
   owner: MCPaimon-Extension
   repository: template
+
