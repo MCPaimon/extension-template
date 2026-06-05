@@ -12,7 +12,7 @@ base {
 dependencies {
     compileOnly project(':tools')
     // API Dependencies for compiling the extension
-    compileOnly 'io.github.mcpaimon:foliamc:2026.0.7-3'
+    compileOnly 'io.github.mcpaimon:foliamc:2026.0.7-4'
 
     // Folia API
     compileOnly 'dev.folia:folia-api:1.20.4-R0.1-SNAPSHOT'
