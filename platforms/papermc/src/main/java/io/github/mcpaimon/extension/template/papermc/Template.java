@@ -2,7 +2,7 @@ package io.github.mcpaimon.extension.template.papermc;
 
 import io.github.mcpaimon.extension.template.tools.GetPlayerName;
 import io.github.mcpaimon.extension.template.tools.GetPlayerUuid;
-import io.github.mcengine.mcextension.api.IMCExtension;
+import io.github.mcpaimon.mcextension.api.IMCExtension;
 import io.github.mcpaimon.papermc.MCAIPlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;

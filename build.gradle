@@ -34,8 +34,8 @@ subprojects {
 
     dependencies {
         // Base API and Common dependencies for all subprojects (Bukkit, Tools, PaperMC, etc.)
-        compileOnly 'io.github.mcpaimon:api:2026.0.7-3'
-        compileOnly 'io.github.mcpaimon:common:2026.0.7-3'
+        compileOnly 'io.github.mcpaimon:api:2026.0.7-5'
+        compileOnly 'io.github.mcpaimon:common:2026.0.7-5'
     }
 
     publishing {
