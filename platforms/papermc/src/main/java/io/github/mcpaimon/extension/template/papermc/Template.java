@@ -1,4 +1,4 @@
-package io.github.mcpaimon.extension.template;
+package io.github.mcpaimon.extension.template.papermc;
 
 import io.github.mcpaimon.extension.template.tools.GetPlayerName;
 import io.github.mcpaimon.extension.template.tools.GetPlayerUuid;

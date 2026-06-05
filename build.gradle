@@ -32,11 +32,17 @@ subprojects {
         }
     }
 
+    dependencies {
+        // Base API and Common dependencies for all subprojects (Bukkit, Tools, PaperMC, etc.)
+        compileOnly 'io.github.mcpaimon:api:2026.0.7-3'
+        compileOnly 'io.github.mcpaimon:common:2026.0.7-3'
+    }
+
     publishing {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = "https://maven.pkg.github.com/MCPaimon/plugin"
+                url = "https://maven.pkg.github.com/MCPaimon-Extension/template"
                 credentials {
                     username = System.getenv('GITHUB_ACTOR') ?: System.getenv('AGENT_GITHUB_NAME') ?: System.getenv('USER_GITHUB_NAME')
                     password = System.getenv('GITHUB_TOKEN') ?: System.getenv('AGENT_GITHUB_TOKEN') ?: System.getenv('USER_GITHUB_TOKEN')
@@ -44,17 +50,15 @@ subprojects {
             }
         }
         
-        publications {
-            mavenJava(MavenPublication) {
-                from components.java
-                pom {
-                    url = "https://mcpaimon.github.io/website"
-                    developers {
-                        developer {
-                            id = "jetsadawijit"
-                            name = "jetsadawijit"
-                            url = "https://github.com/jetsadawijit"
-                        }
+        // Apply these POM settings to ALL MavenPublications in subprojects
+        publications.withType(MavenPublication) {
+            pom {
+                url = "https://mcpaimon.github.io/website"
+                developers {
+                    developer {
+                        id = "jetsadawijit"
+                        name = "jetsadawijit"
+                        url = "https://github.com/jetsadawijit"
                     }
                 }
             }
@@ -64,7 +68,8 @@ subprojects {
 
 // Depend on subprojects to include them in the root JAR
 dependencies {
-    implementation project(':papermc')
+    implementation project(':tools')
+    implementation project(':platforms:papermc')
 }
 
 base {

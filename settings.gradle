@@ -13,4 +13,5 @@ plugins {
 
 rootProject.name = 'mcpaimon-extension-template'
 
-include 'papermc'
+include 'tools'
+include 'platforms:papermc'
