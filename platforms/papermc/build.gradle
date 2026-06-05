@@ -12,7 +12,7 @@ base {
 dependencies {
     compileOnly project(':tools')
     // API Dependencies for compiling the extension
-    compileOnly 'io.github.mcpaimon:papermc:2026.0.6-3'
+    compileOnly 'io.github.mcpaimon:papermc:2026.0.7-3'
 
     // Paper API
     compileOnly 'io.papermc.paper:paper-api:26.1.2.build.+'
