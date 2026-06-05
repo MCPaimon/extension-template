@@ -1,0 +1,33 @@
+repositories {
+    maven {
+        name = "spigotmc-repo"
+        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+}
+
+base {
+    archivesName = "${project.property('project-name')}SpigotMC"
+}
+
+dependencies {
+    compileOnly project(':tools')
+    // API Dependencies for compiling the extension
+    compileOnly 'io.github.mcpaimon:spigotmc:2026.0.7-3'
+
+    // Spigot API
+    compileOnly 'org.spigotmc:spigot-api:26.1.2-R0.1-SNAPSHOT'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = 'spigotmc'
+            
+            pom {
+                name = project.name
+                description = "MCPaimon Extension Template SpigotMC"
+            }
+        }
+    }
+}

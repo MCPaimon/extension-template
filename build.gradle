@@ -70,6 +70,8 @@ subprojects {
 dependencies {
     implementation project(':tools')
     implementation project(':platforms:papermc')
+    implementation project(':platforms:spigotmc')
+    implementation project(':platforms:foliamc')
 }
 
 base {

@@ -1,16 +1,16 @@
-package io.github.mcpaimon.extension.template.papermc;
+package io.github.mcpaimon.extension.template.foliamc;
 
 import io.github.mcpaimon.extension.template.tools.GetPlayerName;
 import io.github.mcpaimon.extension.template.tools.GetPlayerUuid;
 import io.github.mcengine.mcextension.api.IMCExtension;
-import io.github.mcpaimon.papermc.MCAIPlugin;
+import io.github.mcpaimon.foliamc.MCAIPlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.concurrent.Executor;
 
 /**
- * Main extension class for PaperMC platform.
+ * Main extension class for FoliaMC platform.
  */
 public class Template implements IMCExtension {
 
@@ -27,7 +27,7 @@ public class Template implements IMCExtension {
             mcaiPlugin.getProvider().registerTool(new GetPlayerName());
             mcaiPlugin.getProvider().registerTool(new GetPlayerUuid());
             
-            mcaiPlugin.getLogger().info("Template extension loaded successfully on PaperMC. Tools registered.");
+            mcaiPlugin.getLogger().info("Template extension loaded successfully on FoliaMC. Tools registered.");
             
         } else if (plugin instanceof JavaPlugin javaPlugin) {
             // Fallback to JavaPlugin logger if it is not MCAIPlugin
@@ -39,7 +39,7 @@ public class Template implements IMCExtension {
     public void onDisable(Object plugin, Executor executor) {
         // Safe check and cast to JavaPlugin to use getLogger()
         if (plugin instanceof JavaPlugin javaPlugin) {
-            javaPlugin.getLogger().info("Template extension has been disabled on PaperMC.");
+            javaPlugin.getLogger().info("Template extension has been disabled on FoliaMC.");
         }
     }
 }

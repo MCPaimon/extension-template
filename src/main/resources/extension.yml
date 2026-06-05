@@ -2,10 +2,11 @@ name: ${name}
 version: ${version}
 
 mains:
-  papermc: "${main}.extension.template.Template"
+  papermc: "${main}.extension.template.papermc.Template"
+  spigotmc: "${main}.extension.template.spigotmc.Template"
+  foliamc: "${main}.extension.template.foliamc.Template"
 
 git:
   provider: github
   owner: MCPaimon-Extension
   repository: template
-

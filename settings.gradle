@@ -15,3 +15,5 @@ rootProject.name = 'mcpaimon-extension-template'
 
 include 'tools'
 include 'platforms:papermc'
+include 'platforms:spigotmc'
+include 'platforms:foliamc'
