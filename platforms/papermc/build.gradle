@@ -22,7 +22,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifactId = 'papermc'
+            artifactId = 'template-papermc'
             
             pom {
                 name = project.name
