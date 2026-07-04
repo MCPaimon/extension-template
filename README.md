@@ -2,6 +2,8 @@
 
 This project is the boilerplate for developers creating custom extensions and tools for the MCAgents plugin. It mirrors the structure of the [Core extension](https://github.com/MCPaimon/extension-core) and uses a multi-module Gradle setup that supports all three platforms: PaperMC, SpigotMC, and FoliaMC.
 
+> **Note:** This extension only adds tools to the MCAgents plugin. It does not need its own route on the central API server ([`MCEngine/server-expressjs`](https://github.com/MCEngine/server-expressjs)); all persistence goes through the plugin's `/api/mcagents` route.
+
 ## Project Structure
 
 * **`tools/`**: Platform-neutral AI tools shared by every platform module.
