@@ -3,7 +3,7 @@ package io.github.mcpaimon.extension.template.spigotmc;
 import io.github.mcpaimon.extension.template.tools.GetPlayerName;
 import io.github.mcpaimon.extension.template.tools.GetPlayerUuid;
 import io.github.mcpaimon.mcextension.api.IMCExtension;
-import io.github.mcpaimon.spigotmc.MCAIPlugin;
+import io.github.mcpaimon.spigotmc.MCAgentsPlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,22 +16,22 @@ public class Template implements IMCExtension {
 
     @Override
     public void onLoad(Object plugin, Executor executor) {
-        // Check if the plugin is an instance of MCAIPlugin
-        if (plugin instanceof MCAIPlugin mcaiPlugin) {
+        // Check if the plugin is an instance of MCAgentsPlugin
+        if (plugin instanceof MCAgentsPlugin mcagentsPlugin) {
             
             // Create the custom categories
-            mcaiPlugin.getProvider().createCategory("custom", "This is custom category");
-            mcaiPlugin.getProvider().createCategory("player", "Tools for player information and management");
+            mcagentsPlugin.getProvider().createCategory("custom", "This is custom category");
+            mcagentsPlugin.getProvider().createCategory("player", "Tools for player information and management");
             
             // Register your custom tools here
-            mcaiPlugin.getProvider().registerTool(new GetPlayerName());
-            mcaiPlugin.getProvider().registerTool(new GetPlayerUuid());
+            mcagentsPlugin.getProvider().registerTool(new GetPlayerName());
+            mcagentsPlugin.getProvider().registerTool(new GetPlayerUuid());
             
-            mcaiPlugin.getLogger().info("Template extension loaded successfully on SpigotMC. Tools registered.");
+            mcagentsPlugin.getLogger().info("Template extension loaded successfully on SpigotMC. Tools registered.");
             
         } else if (plugin instanceof JavaPlugin javaPlugin) {
-            // Fallback to JavaPlugin logger if it is not MCAIPlugin
-            javaPlugin.getLogger().severe("Failed to load Template extension: Host plugin is not MCAIPlugin.");
+            // Fallback to JavaPlugin logger if it is not MCAgentsPlugin
+            javaPlugin.getLogger().severe("Failed to load Template extension: Host plugin is not MCAgentsPlugin.");
         }
     }
 

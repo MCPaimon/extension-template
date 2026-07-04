@@ -34,8 +34,8 @@ subprojects {
 
     dependencies {
         // Base API and Common dependencies for all subprojects (Bukkit, Tools, PaperMC, etc.)
-        compileOnly 'io.github.mcpaimon:api:2026.0.7-5'
-        compileOnly 'io.github.mcpaimon:common:2026.0.7-5'
+        compileOnly 'io.github.mcpaimon:api:2026.0.7-8'
+        compileOnly 'io.github.mcpaimon:common:2026.0.7-8'
     }
 
     publishing {
@@ -83,7 +83,7 @@ processResources {
     def props = [
         "name": project.property("project-name"),
         "version": "${project.property('project-version')}-${project.property('project-iteration')}",
-        "main": project.property('project-group')
+        "group": project.property('project-group')
     ]
     
     inputs.properties props
@@ -92,6 +92,11 @@ processResources {
     filesMatching("extension.yml") {
         expand props
     }
+}
+
+// Disable the normal jar task to prevent building the standard unshaded JAR
+tasks.named('jar') {
+    enabled = false
 }
 
 // Configure Shadow JAR to merge all subprojects into one JAR

@@ -1,11 +1,14 @@
 # MCPaimon Template Extension
 
-This project serves as a boilerplate for developers creating custom extensions and tools for the MCPaimon AI Plugin. It uses a multi-module Gradle setup to support different platforms (starting with PaperMC).
+This project is the boilerplate for developers creating custom extensions and tools for the MCAgents plugin. It mirrors the structure of the [Core extension](https://github.com/MCPaimon/extension-core) and uses a multi-module Gradle setup that supports all three platforms: PaperMC, SpigotMC, and FoliaMC.
 
 ## Project Structure
 
-* **`papermc/`**: Contains the PaperMC-specific implementation and tools.
-* **`src/main/resources/`**: Contains the global `extension.yml` configuration.
+* **`tools/`**: Platform-neutral AI tools shared by every platform module.
+* **`platforms/papermc/`**: PaperMC entry point (`Template`).
+* **`platforms/spigotmc/`**: SpigotMC entry point (`Template`).
+* **`platforms/foliamc/`**: FoliaMC entry point (`Template`).
+* **`src/main/resources/`**: The global `extension.yml` descriptor with the per platform main classes.
 
 ## Features & AI Tools
 
@@ -18,14 +21,14 @@ This template includes basic examples of how to register custom tools:
 
 1. Copy this template directory to start your new extension project.
 2. Update `gradle.properties` with your project's name, group, and version.
-3. If adding new platforms, create a new submodule and update `settings.gradle` and the root `build.gradle`.
-4. Update `src/main/resources/extension.yml` to point to your main classes for each platform.
-5. Implement your custom tools in the respective modules and register them in your main extension class.
+3. Update `src/main/resources/extension.yml` so the `mains` entries point to your main classes for each platform.
+4. Implement your custom tools in the `tools/` module and register them in each platform's main extension class.
+5. Use the [Core extension](https://github.com/MCPaimon/extension-core) as the reference for advanced patterns (commands, listeners, categories, custom tool loading).
 
 ## Requirements
 
 * Java 25
-* MCPaimon AI Plugin Core
+* MCAgents Plugin (`io.github.mcpaimon` artifacts, version 2026.0.7-8)
 
 ## Build Instructions
 

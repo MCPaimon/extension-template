@@ -2,9 +2,9 @@ name: ${name}
 version: ${version}
 
 mains:
-  papermc: "${main}.extension.template.papermc.Template"
-  spigotmc: "${main}.extension.template.spigotmc.Template"
-  foliamc: "${main}.extension.template.foliamc.Template"
+  papermc: "${group}.papermc.Template"
+  spigotmc: "${group}.spigotmc.Template"
+  foliamc: "${group}.foliamc.Template"
 
 git:
   provider: github
