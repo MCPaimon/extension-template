@@ -8,5 +8,5 @@ mains:
 
 git:
   provider: github
-  owner: MCPaimon-Extension
-  repository: template
+  owner: MCPaimon
+  repository: extension-template
